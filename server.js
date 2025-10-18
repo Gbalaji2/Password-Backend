@@ -11,6 +11,11 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+// ✅ Add this route here
+app.get('/', (req, res) => {
+  res.send('Password reset backend is live 🚀');
+});
+
 app.use('/api', authRoutes);
 
 // health
