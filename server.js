@@ -11,14 +11,12 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-// ✅ Add this route here
 app.get('/', (req, res) => {
   res.send('Password reset backend is live 🚀');
 });
 
-app.use('/api', authRoutes);
+app.use('/api/auth', authRoutes);
 
-// health
 app.get('/api/health', (req, res) => res.json({ ok: true }));
 
 const PORT = process.env.PORT || 5000;
